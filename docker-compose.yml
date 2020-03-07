@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "5784:80"
+    restart: always
+    container_name: irkbot-nginx
+    volumes:
+      - /mnt/irkbot/nginx/html:/usr/share/nginx/html
+      - ./log/nginx:/var/log/nginx
